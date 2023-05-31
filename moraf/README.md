@@ -1,3 +1,5 @@
+# MORAF(Mutation Observer/Request Animation Frame)
+
 # Description
 Use this function in lieue of polling when dealing with dynamic elements (SPA related or loading after DOM ready).
 
