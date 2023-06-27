@@ -12,7 +12,7 @@ import getElement from './getElement';
  * @throws {TypeError} - If the first parameter is not an array, or the second parameter is not a function,
  *                       or the third parameter is not a number greater than or equal to 1000.
  */
-const waitForConditions = (conditions, callback, timeout = 10000, pollFreq = 100) => {
+const waitForConditions = (conditions, callback, onError, timeout = 10000, pollFreq = 100) => {
   if (!Array.isArray(conditions)) {
     throw new TypeError('The first parameter must be an array');
   }
@@ -61,11 +61,16 @@ const waitForConditions = (conditions, callback, timeout = 10000, pollFreq = 100
         return acc;
       }, {});
 
-      console.log('All conditions are true');
+      //console.log('All conditions are true');
       callback(elements);
     })
     .catch((error) => {
-      console.error(error);
+      //console.error(error);
+      if (onError && typeof onError === 'function') {
+        onError(error);
+      } else {
+        console.error(error);
+      }
     });
 };
 export default waitForConditions;
