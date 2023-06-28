@@ -1,4 +1,4 @@
-import getElement from './getElement';
+import getElement from '../get-element/getElement';
 
 /**
  * Poller function that waits for a set of conditions to be true before executing a callback function.
