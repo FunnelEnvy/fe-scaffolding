@@ -1,5 +1,5 @@
-import getElement from './helpers/getElement';
-import waitForConditions from './helpers/waitForConditions';
-import onUrlChange from './helpers/onUrlChange';
+import getElement from './get-element/getElement';
+import waitForConditions from './wait-for-conditions/waitForConditions';
+import onUrlChange from './on-SPA-url-change/onUrlChange';
 
 export { getElement, waitForConditions, onUrlChange };
