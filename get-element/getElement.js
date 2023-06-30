@@ -5,6 +5,7 @@
     @returns {Promise} - A promise that resolves with an object containing the CSS selector and an array of found elements.
     @throws {Error} - If a timeout is reached before elements matching the selector are found.
     */
+
 const getElement = (cssSelector, onError = null, timeout = 10000) => {
   const els = document.querySelectorAll(cssSelector);
   if (els.length > 0) {
@@ -32,6 +33,7 @@ const getElement = (cssSelector, onError = null, timeout = 10000) => {
     });
     setTimeout(() => {
       observer.disconnect();
+
       const errorMessage = `Timeout while waiting for ${cssSelector}`;
       if (onError && typeof onError === 'function') {
         onError(errorMessage);
